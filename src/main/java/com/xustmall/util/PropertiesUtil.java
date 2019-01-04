@@ -43,7 +43,7 @@ public class PropertiesUtil {
 
     public static String getProperty(String key,String defaultValue){
 
-        String value = props.getProperty(key.trim());
+        String value = props.getProperty(key.trim());    //trim()避免空格
         if(StringUtils.isBlank(value)){
             value = defaultValue;
         }
