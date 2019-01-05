@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  * @Version: 1.0
  */
 @Controller
-@RequestMapping("/manage/user")
+@RequestMapping("/manage/user/")
 public class UserManageController {
 
     @Autowired

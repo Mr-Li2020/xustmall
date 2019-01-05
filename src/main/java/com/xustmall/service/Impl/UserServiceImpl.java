@@ -73,8 +73,8 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public ServerResponse<String> checkValid(String str, String type) {
-        //isNoneBlank(" ")方法返回false   isNotEmpty(" ")方法返回true
-        if (StringUtils.isNoneBlank(type)) {
+        //isNotBlank(" ")方法返回false   isNotEmpty(" ")方法返回true
+        if (StringUtils.isNotBlank(type)) {
             //校验用户名
             if (Const.USERNAME.equals(type)) {
                 int resultCount = userMapper.checkUsername(str);
@@ -102,7 +102,7 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户不存在");
         }
         String question = userMapper.selectQuestionByUsername(username);
-        if (StringUtils.isNoneBlank(question)) {
+        if (StringUtils.isNotBlank(question)) {
             return ServerResponse.createBySuccess(question);
         }
 
