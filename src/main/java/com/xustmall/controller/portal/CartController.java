@@ -75,7 +75,7 @@ public class CartController {
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iCartService.selecOrUnSelect(user.getId(),null,Const.Cart.CHECKED);
+        return iCartService.selectOrUnSelect(user.getId(),null,Const.Cart.CHECKED);
     }
     //全反选
     @RequestMapping("un_select_all.do")
@@ -85,7 +85,7 @@ public class CartController {
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iCartService.selecOrUnSelect(user.getId(),null,Const.Cart.UN_CHECKED);
+        return iCartService.selectOrUnSelect(user.getId(),null,Const.Cart.UN_CHECKED);
     }
     //单独选
     @RequestMapping("select.do")
@@ -95,7 +95,7 @@ public class CartController {
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iCartService.selecOrUnSelect(user.getId(),productId,Const.Cart.CHECKED);
+        return iCartService.selectOrUnSelect(user.getId(),productId,Const.Cart.CHECKED);
     }
     //单独反选
     @RequestMapping("un_select.do")
@@ -105,7 +105,7 @@ public class CartController {
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iCartService.selecOrUnSelect(user.getId(),productId,Const.Cart.UN_CHECKED);
+        return iCartService.selectOrUnSelect(user.getId(),productId,Const.Cart.UN_CHECKED);
     }
 
     //查询当前用户的购物车中的产品的数量

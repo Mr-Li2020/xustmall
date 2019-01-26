@@ -200,7 +200,7 @@
   </update>
 
     <select id="selectByUserIdAndOrderNo" parameterType="map" resultMap="BaseResultMap">
-        select 
+        select
         <include refid="Base_Column_List"/>
         from mmall_order
         where order_no = #{orderNo}
@@ -208,9 +208,24 @@
     </select>
 
     <select id="selectByOrderNo" parameterType="long" resultMap="BaseResultMap">
-        select 
+        select
         <include refid="Base_Column_List"/>
-        from  mmall_order
+        from mmall_order
         where order_no = #{orderNo}
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap" parameterType="int">
+        select
+        <include refid="Base_Column_List"/>
+        from mmall_order
+        where user_id = #{userId}
+        order by create_time desc
+    </select>
+
+    <select id="selectAllOrder" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from mmall_order
+        order by create_time desc
     </select>
 </mapper>
